@@ -1,30 +1,44 @@
 import './App.css';
 import {useState} from "react";
-import {createUserWithEmailAndPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "./firebase.js";
 
 
 function App() {
+  //States for register form and for login form
 const [registerEmail, setRegisterEmail] = useState("");
 const [registerPassword, setRegisterPassword] = useState("");
 const [loginEmail, setLoginEmail] = useState("");
 const [loginPassword, setLoginPassword] = useState("");
 
+//state for user so it will not throw error when refresh page sets the user to current user when it is logged in
+const [user, setUser] = useState({})
+onAuthStateChanged(auth , (currentUser) => {
+  setUser(currentUser);
+});
+
+// functions for login, register and logout
   const register = async () => {
     try{
-   const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
-   console.log(user)
+      const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+      console.log(user)
     } catch (error) {
       console.log(error.message);
     }
   }; 
   
   const login = async () => {
+     try{
+      const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+      console.log(user)
+    } catch (error) {
+      console.log(error.message);
+    }
 
   };
 
   const logout = async () => {
-
+    await signOut(auth);
   };
 
 
@@ -40,10 +54,12 @@ const [loginPassword, setLoginPassword] = useState("");
         <h3>Log In</h3>
         <input placeholder="Email..." onChange= {(event) => {setLoginEmail(event.target.value);}} />
         <input placeholder="Password..." onChange= {(event) => {setLoginPassword(event.target.value);}} />
-        <button>Log In</button>      
+        <button onClick={login}>Log In</button>      
       </div> 
       <h4> User Logged In: </h4>
-      <button> Sign Out </button>
+  {/* shows the user name that is loged in right now    */}
+      {user?.email}
+      <button onClick={logout}> Sign Out </button>
     </div>
     
   );
