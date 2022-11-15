@@ -11,12 +11,10 @@ const [loginPassword, setLoginPassword] = useState("");
 // //state for user so it will not throw error when refresh page sets the user to current user when it is logged in
 const [user, setUser] = useState({});
 useEffect(() => {
-    // const unsubscribe =
-     onAuthStateChanged(auth, (currentUser) => {
+      onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-    // return unsubscribe;
-  }, []);
+   }, []);
 // functions for login, register and logout
 const register = async () => {
   try{
