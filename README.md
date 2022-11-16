@@ -1,10 +1,8 @@
 QUESTIONNAIRE_FORM =
 
-HOME SERVER http://localhost:3000
+json data file needs to be opened in a new server like:
 
-FORM SERVER : http://localhost:3000/questions
-
-i have created those 2 pathways for the home page and the forms page.
+http://localhost:3000/questions
 
 love Marianna 16/11/2023
 
