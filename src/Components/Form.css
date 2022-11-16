@@ -1,0 +1,17 @@
+* {
+  font-family: sans-serif;
+  color: rgb(35, 34, 34);
+}
+
+.page-name {
+  letter-spacing: 2px;
+}
+
+.dot {
+  font-size: 10vh;
+  color: rgb(168, 39, 80);
+}
+
+.question-title {
+  color: rgb(168, 39, 80);
+}

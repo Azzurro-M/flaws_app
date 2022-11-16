@@ -1,20 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import styled from "styled-components";
-
-const head = styled.h3`
-  font-size: 10em;
-  text-align: center;
-  color: pink;
-`;
+import "./Form.css";
 
 function Form() {
-  const head = styled.h3`
-    font-size: 10em;
-    text-align: center;
-    color: pink;
-  `;
-
   const [questions, setQuestions] = useState([]);
 
   const url = "http://localhost:8000/questions";
@@ -34,11 +22,13 @@ function Form() {
   return (
     <div>
       <div className="form_container">
-        <head>Daily Log.</head>
+        <h2 className="page-name">
+          Daily Log<span className="dot">.</span>
+        </h2>
         <form>
           {questions.map((question) => (
             <div>
-              <h3>{question.title}</h3>
+              <h4 className="question-title">{question.title}</h4>
               <p>{question.question}</p>
               <input
                 type="radio"
