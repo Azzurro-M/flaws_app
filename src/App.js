@@ -11,7 +11,8 @@ const [loginPassword, setLoginPassword] = useState("");
 // //state for user so it will not throw error when refresh page sets the user to current user when it is logged in
 const [user, setUser] = useState({});
 useEffect(() => {
-      onAuthStateChanged(auth, (currentUser) => {
+   
+     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
    }, []);
@@ -38,10 +39,10 @@ const register = async () => {
   };
 
   return (
-    <div className="App">
+    <div className="bg-blue h-screen">
       <div>
-        <h3> Register User </h3>
-          <input  placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value)}}  />
+        <h3 className='bg-blue'> Register User </h3>
+          <input className='bordes-black' placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value)}}  />
           <input  placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value)}}  />
           <button type = "submit" onClick={register}>Creat User</button>
       </div>
