@@ -61,6 +61,12 @@ function Form() {
             </div>
           ))}
         </form>
+        <input
+          className="submit"
+          type="submit"
+          name="submit"
+          value="Submit"
+        ></input>
       </div>
     </div>
   );
