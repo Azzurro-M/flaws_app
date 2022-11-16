@@ -1,3 +1,13 @@
+QUESTIONNAIRE_FORM =
+
+HOME SERVER http://localhost:3000
+
+FORM SERVER : http://localhost:3000/questions
+
+i have created those 2 pathways for the home page and the forms page.
+
+love Marianna 16/11/2023
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
