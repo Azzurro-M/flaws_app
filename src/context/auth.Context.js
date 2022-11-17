@@ -1,5 +1,5 @@
-import { Component, createContext, useContext, useState } from "react";
-import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "../firebase";
+import {  createContext, useContext, useState, useEffect } from "react";
+import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "../firebase";
 
 const AuthContext = createContext();
 
@@ -9,10 +9,10 @@ const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
 
-const [registerEmail, setRegisterEmail] = useState("");
-const [registerPassword, setRegisterPassword] = useState("");
-const [loginEmail, setLoginEmail] = useState("");
-const [loginPassword, setLoginPassword] = useState("");
+// const [registerEmail, setRegisterEmail] = useState("");
+// const [registerPassword, setRegisterPassword] = useState("");
+// const [loginEmail, setLoginEmail] = useState("");
+// const [loginPassword, setLoginPassword] = useState("");
 // //state for user so it will not throw error when refresh page sets the user to current user when it is logged in
 const [user, setUser] = useState({});
 
@@ -27,7 +27,7 @@ useEffect(() => {
     };
    }, []);
 // functions for login, register and logout
-const register = async () => {
+const register = async ( {registerEmail, registerPassword}) => {
   try{
     const newUser = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
     console.log(newUser)
@@ -35,7 +35,7 @@ const register = async () => {
     console.log(error.message);
     }
   }; 
-  const login = async () => {
+  const login = async ( {loginEmail, loginPassword}) => {
      try{
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log(user)
@@ -76,22 +76,11 @@ const register = async () => {
     };
 
     return (
-        <AuhContext.Provider value={exports}>{children}</AuhContext.Provider>
+        <AuthContext.Provider value={exports}>{children}</AuthContext.Provider>
     );
 };
 
 export default AuthProvider;
 export {useAuth};
 
-//componenet A is for demonstartion - should be replaced with the real ones
-{/* <AuthProvider>
-    
-    <ComponentA />
-
-</AuthProvider>;
-
-const ComponentA = () => {
-    const (user, register, login, logout) = useAuth();
-};
- */}
 
