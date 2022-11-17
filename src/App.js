@@ -5,7 +5,11 @@ function App() {
   const {user} = useAuth();
 
   if (user) return <div>{user.email}</div>;
-  return <div className='App'>Flaws - Home Page</div>
+  return <div className='App'>
+      Flaws - Home Page
+      {/* <button onClick={logout}> Sign Out </button>  */}
+    </div>
+
 }
 export default App;
   //States for register form and for login form

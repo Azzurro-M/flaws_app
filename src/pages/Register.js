@@ -36,7 +36,7 @@ return (
         <h3> Register User </h3>
         <input  placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value);}}  />
         <input  placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value);}}  />
-        <button type = "submit" onClick={register}>Creat User</button>
+        {/* <button type = "submit" onClick={register}>Creat User</button> */}
     </form> 
   );
 };
