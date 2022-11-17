@@ -2,6 +2,8 @@ import './App.css';
 import {useState, useEffect} from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "./firebase.js";
+import Navbar from './components/Navbar';
+
 function App() {
   //States for register form and for login form
 const [registerEmail, setRegisterEmail] = useState("");
@@ -38,7 +40,9 @@ const register = async () => {
   };
 
   return (
+    
     <div className="App">
+      <Navbar />
       <div>
         <h3> Register User </h3>
           <input  placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value)}}  />
