@@ -39,9 +39,9 @@ const register = async () => {
   };
 
   return (
-    <div className="bg-blue h-screen">
+    <div className="App">
       <div>
-        <h3 className='bg-blue'> Register User </h3>
+        <h3> Register User </h3>
           <input className='bordes-black' placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value)}}  />
           <input  placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value)}}  />
           <button type = "submit" onClick={register}>Creat User</button>
