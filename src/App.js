@@ -28,8 +28,9 @@ function App() {
       {user?.email}
       <button onClick={logout}> Sign Out </button>
     </div>
-
+  )
 }
+
 export default App;
   //States for register form and for login form
 // const [registerEmail, setRegisterEmail] = useState("");
