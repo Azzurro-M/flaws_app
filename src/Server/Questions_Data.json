@@ -29,7 +29,7 @@
 
     {
       "title": "Questions 4",
-      "question1": "Has your partner been violent today?",
+      "question": "Has your partner been violent today?",
       "option1": "Yes",
       "option2": "Not so much",
       "option3": "Not at all",
