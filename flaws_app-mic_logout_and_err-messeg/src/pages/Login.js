@@ -1,6 +1,7 @@
 import { useAuth } from "../context/auth.Context";
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { processFirebaseErrors } from "../util/errors";
 
 const Login = () => {
 
@@ -23,26 +24,23 @@ const Login = () => {
         } catch (err) {
           setLoading(false);
           console.log(err);
-          setError(err.message);
+          setError(processFirebaseErrors(err.message));
         }
     };
 
 if (loading) return <div>Loading...</div>;
 
 return (
+  <>
     <form onSubmit={onSubmit}>
       <h3>Log In</h3>
-      {error&&<div>{error}</div>}
+      {error&&<p>{error}</p>}
            <input type= "email" placeholder="Email..." value = {loginEmail}  onChange= {(event) => {setLoginEmail(event.target.value);}} />
            <input type = "password" placeholder="Password..." value = {loginPassword} onChange= {(event) => {setLoginPassword(event.target.value);}}  />
            <button type="submit" onClick={login}>Log In</button> 
-        
-       {/* <h4> User Logged In: </h4>
-   {/* shows the user name that is loged in right now    */}
-       {/* {user?.email} */} 
-       {/* <button onClick={logout}> Sign Out </button> */}
-    </form>
-
+     </form>
+      <p>Want to creat an account? - <Link to="/register">Register</Link></p>
+ </>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useAuth } from "../context/auth.Context";
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { processFirebaseErrors } from "../util/errors";
 
 const Register = () => {
 
@@ -23,20 +24,23 @@ const Register = () => {
         } catch (err) {
           setLoading(false);
           console.log(err);
-          setError(err.message);
+          setError(processFirebaseErrors(err.message));
         }
     };
 
 if (loading) return <div>Loading...</div>;
 
 return (
+  <>
     <form onSubmit={onSubmit}>
         <h3> Register User </h3>
-        {error&&<div>{error}</div>}
+        {error&&<p>{error}</p>}
         <input  placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value);}}  />
         <input  placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value);}}  />
         <button type = "submit" onClick={register}>Creat User</button> 
     </form> 
+    <p>Already have an account? - <Link to="/login">Log In</Link></p>
+  </> 
   );
 };
 
