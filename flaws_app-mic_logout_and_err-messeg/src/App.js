@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import { useAuth } from './context/auth.Context';
 
 function App() {
   const {user, logout} = useAuth();
+  const navigate = useNavigate();
 
   if (user)
    return (
@@ -14,8 +16,8 @@ function App() {
    );
   return <div className='App'>
     <h2>Flaws - Home Page</h2>
-      <p>Register</p>
-      <p>Sign In</p> 
+      <button onClick={() => navigate("/register")}>Register</button>
+      <button onClick={() => navigate("/login")}>Sign In</button> 
   </div>;
 }
 export default App;
