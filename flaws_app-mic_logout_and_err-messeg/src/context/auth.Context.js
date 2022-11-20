@@ -22,9 +22,11 @@ useEffect(() => {
 
 const register = async ( {registerEmail, registerPassword}) => {
      await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+     console.log("mail", registerEmail, "password", registerPassword);
    }; 
   const login = async ( {loginEmail, loginPassword}) => {
     await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+     console.log("mail", loginEmail, "password", loginPassword);
    };
   const logout = async () => {
     await signOut(auth);
