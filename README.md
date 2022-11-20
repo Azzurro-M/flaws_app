@@ -4,7 +4,13 @@ json data file needs to be opened in a new server like:
 
 http://localhost:3000/questions
 
-love Marianna 16/11/2023
+love Marianna 16/11/2022
+
+Please use this link to understand and install react calendar from react libraries https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/
+
+still trying to figure out the css
+
+Marianna 20/11/2022
 
 # Getting Started with Create React App
 
