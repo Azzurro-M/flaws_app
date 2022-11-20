@@ -8,10 +8,9 @@ function App() {
 
   if (user)
    return (
-    <div>
+    <div className='App'>
      <h2>Hello {user.email}</h2>
-      
-      <button onClick={logout}> Sign Out </button> 
+     <button onClick={logout}> Sign Out </button> 
     </div>
    );
   return <div className='App'>
