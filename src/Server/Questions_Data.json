@@ -3,7 +3,7 @@
     {
       "title": "Questions 1",
       "question": "How are you feeling today?",
-      "option1": "Yes I am great",
+      "option1": "I am feeling good",
       "option2": "Not so much",
       "option3": "Not at all",
       "option4": "Don't know"
@@ -11,7 +11,7 @@
 
     {
       "title": "Questions 2",
-      "question": "Do you feel supported today by your partner?",
+      "question": "Do you feel you receive enough support from your community?",
       "option1": "Yes I do",
       "option2": "Not so much",
       "option3": "Not at all",
@@ -20,7 +20,16 @@
 
     {
       "title": "Questions 3",
-      "question": "Has your partner raised your voice at you today?",
+      "question": "How do you feel about your partner?",
+      "option1": "I feel Great",
+      "option2": "Not too good",
+      "option3": "Not good at all",
+      "option4": "Don't know"
+    },
+
+    {
+      "title": "Questions 4",
+      "question": "Has someone close to you been violent towards you today?",
       "option1": "Yes",
       "option2": "Not so much",
       "option3": "Not at all",
@@ -28,8 +37,8 @@
     },
 
     {
-      "title": "Questions 4",
-      "question": "Has your partner been violent today?",
+      "title": "Questions 5",
+      "question": "Do you feel safe at home?",
       "option1": "Yes",
       "option2": "Not so much",
       "option3": "Not at all",

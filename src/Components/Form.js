@@ -20,10 +20,13 @@ function Form() {
     questionnaire();
   }, []);
 
+  const [message, setMessage] = useState("");
+
   const onSubmit = (e) => {
     e.preventDefault();
 
     console.log(userInput);
+    setMessage(`Thank you for submitting your form`);
   };
 
   //check user input -
@@ -31,10 +34,15 @@ function Form() {
 
   return (
     <form onSubmit={onSubmit}>
+      <h2 className="page-name">
+        Daily Log
+        <span className="dot">.</span>
+      </h2>
       {questions.map((question) => (
-        <div>
+        <div className="container">
           <h4>{question.title}</h4>
-          <p>{question.question}</p>
+
+          <p className="question-title">{question.question}</p>
 
           <div className="radio">
             <label>
@@ -106,9 +114,10 @@ function Form() {
         </div>
       ))}
 
-      <button className="Submit" type="submit">
+      <button className="submit" type="submit">
         Submit
       </button>
+      <div className="message">{message}</div>
     </form>
   );
 }

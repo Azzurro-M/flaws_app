@@ -8,6 +8,9 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase.js";
 import Form from "./Components/Form";
+import PeriodCalendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
 function App() {
   //States for register form and for login form
   const [registerEmail, setRegisterEmail] = useState("");
@@ -100,6 +103,7 @@ function App() {
       {user?.email}
       <button onClick={logout}> Sign Out </button>
       <Form />
+      <PeriodCalendar />
     </div>
   );
 }
