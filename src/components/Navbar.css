@@ -30,6 +30,6 @@ body {
     background-color: #d67f8a;
 
 }
-.nav-item:active {
+li.active {
     background-color: #c97e88;
 }

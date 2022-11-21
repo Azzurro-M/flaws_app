@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import AuthProvider from './context/auth.Context';
-import {createBrowserRouter , RouterProvider} from "react-router-dom";
+import {createBrowserRouter , RouterProvider, BrowserRouter} from "react-router-dom";
 import Register from './pages/Register';
 import Login from './pages/Login';
 
@@ -27,9 +27,11 @@ const router = createBrowserRouter ([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <AuthProvider>
       <RouterProvider router={router} />
-    </AuthProvider>
+      </AuthProvider>
+      </BrowserRouter>
   </React.StrictMode>
 );
 
