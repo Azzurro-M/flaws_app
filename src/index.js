@@ -1,37 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 // import reportWebVitals from './reportWebVitals';
-import AuthProvider from './context/auth.Context';
-import {createBrowserRouter , RouterProvider, BrowserRouter} from "react-router-dom";
-import Register from './pages/Register';
-import Login from './pages/Login';
+import AuthProvider from "./context/auth.Context";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+} from "react-router-dom";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
   {
-    path:"/",
+    path: "/",
     element: <App />,
   },
- {
-    path:"/register",
+  {
+    path: "/register",
     element: <Register />,
   },
   {
-    path:"/login",
+    path: "/login",
     element: <Login />,
   },
-  
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <AuthProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
       </AuthProvider>
-      </BrowserRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
