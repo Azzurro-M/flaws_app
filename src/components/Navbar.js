@@ -5,9 +5,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/" className="logout">
-        Log out
-      </Link>
+      <button onClick={logout}> Sign Out </button>
       <img className="logo" src="" alt="" />
       <ul className="nav-list">
         <CustomLink to="/Calender"> Calender</CustomLink>
