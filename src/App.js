@@ -1,6 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import './App.css';
-import { useAuth } from './context/auth.Context';
+import {useState, useEffect} from "react";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "./firebase.js";
+import Navbar from './components/Navbar';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const {user, logout} = useAuth();
@@ -8,7 +12,15 @@ function App() {
 
   if (user)
    return (
-    <div className='App'>
+     <div className='App'>
+       <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/form' element={<Form />} />
+          <Route path='/calender' element={<Calender/>}/>
+        </Routes>
+      </div>
      <h2>Hello {user.email}</h2>
      <button onClick={logout}> Sign Out </button> 
     </div>
@@ -19,5 +31,7 @@ function App() {
       <button onClick={() => navigate("/login")}>Sign In</button> 
   </div>;
 }
+
 export default App;
- 
+
+
