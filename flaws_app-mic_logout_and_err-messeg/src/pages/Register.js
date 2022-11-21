@@ -19,6 +19,7 @@ const Register = () => {
         try {
           setLoading(true);
           await register({registerEmail, registerPassword});
+          console.log("2 mail", registerEmail, "2 password", registerPassword);
           setLoading(false);
           navigate("/");
         } catch (err) {

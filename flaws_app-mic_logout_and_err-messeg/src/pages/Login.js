@@ -20,6 +20,7 @@ const Login = () => {
         try {
           setLoading(true);
           await login({loginEmail, loginPassword});
+          console.log("2 mail", loginEmail, "2 password", loginPassword);
           setLoading(false);
           navigate("/");
         } catch (err) {
