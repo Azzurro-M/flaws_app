@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import {useState, useEffect} from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
@@ -6,12 +7,13 @@ import Navbar from './components/Navbar';
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const {user} = useAuth();
+  const {user, logout} = useAuth();
+  const navigate = useNavigate();
 
-  return (
-    
-    <div className="App">
-      <Navbar />
+  if (user)
+   return (
+     <div className='App'>
+       <Navbar />
       <div className="container">
         <Routes>
           <Route path='/' element={<Login />} />
@@ -19,24 +21,15 @@ function App() {
           <Route path='/calender' element={<Calender/>}/>
         </Routes>
       </div>
-      <div>
-        <h3> Register User </h3>
-          <input  placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value)}}  />
-          <input  placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value)}}  />
-          <button type = "submit" onClick={register}>Creat User</button>
-      </div>
-      <div> 
-        <h3>Log In</h3>
-          <input type= "email" placeholder="Email..." onChange= {(event) => {setLoginEmail(event.target.value)}} value = {loginEmail}/>
-          <input type = "password" placeholder="Password..." onChange= {(event) => {setLoginPassword(event.target.value)}} value = {loginPassword} />
-          <button type="submit" onClick={login}>Log In</button> 
-      </div> 
-      <h4> User Logged In: </h4>
-  {/* shows the user name that is loged in right now    */}
-      {user?.email}
-      <button onClick={logout}> Sign Out </button>
+     <h2>Hello {user.email}</h2>
+     <button onClick={logout}> Sign Out </button> 
     </div>
-  )
+   );
+  return <div className='App'>
+    <h2>Flaws - Home Page</h2>
+      <button onClick={() => navigate("/register")}>Register</button>
+      <button onClick={() => navigate("/login")}>Sign In</button> 
+  </div>;
 }
 
 export default App;
