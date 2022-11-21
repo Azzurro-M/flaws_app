@@ -24,13 +24,23 @@ function Form() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
     console.log(userInput);
-    setMessage(`Thank you for submitting your form`);
+    let redFlag = false;
+    for (const question in userInput) {
+      const answer = userInput[question];
+      if (answer[0] > 1) {
+        redFlag = true;
+        setMessage("Please contact our helpline for immidiate help!");
+        break;
+      }
+    }
+    if (redFlag === false) {
+      setMessage(`Thank you for submitting your form`);
+    }
   };
 
   //check user input -
-  console.log(questions.length && questions[0].option1);
+  // console.log(questions.length && questions[0].option1);
 
   return (
     <form onSubmit={onSubmit}>
@@ -39,7 +49,7 @@ function Form() {
         <span className="dot">.</span>
       </h2>
       {questions.map((question) => (
-        <div className="container">
+        <div className="container" key={question.question}>
           <h4>{question.title}</h4>
 
           <p className="question-title">{question.question}</p>
@@ -49,11 +59,11 @@ function Form() {
               <input
                 type="radio"
                 value={question.option1}
-                checked={userInput[question.question] === question.option1}
+                checked={userInput[question.question]?.[1] === question.option1}
                 onChange={(e) =>
                   setUserInput({
                     ...userInput,
-                    [question.question]: e.target.value,
+                    [question.question]: [1, e.target.value],
                   })
                 }
               />
@@ -66,11 +76,11 @@ function Form() {
               <input
                 type="radio"
                 value={question.option2}
-                checked={userInput[question.question] === question.option2}
+                checked={userInput[question.question]?.[1] === question.option2}
                 onChange={(e) =>
                   setUserInput({
                     ...userInput,
-                    [question.question]: e.target.value,
+                    [question.question]: [2, e.target.value],
                   })
                 }
               />
@@ -83,11 +93,11 @@ function Form() {
               <input
                 type="radio"
                 value={question.option3}
-                checked={userInput[question.question] === question.option3}
+                checked={userInput[question.question]?.[1] === question.option3}
                 onChange={(e) =>
                   setUserInput({
                     ...userInput,
-                    [question.question]: e.target.value,
+                    [question.question]: [3, e.target.value],
                   })
                 }
               />
@@ -100,15 +110,66 @@ function Form() {
               <input
                 type="radio"
                 value={question.option4}
-                checked={userInput[question.question] === question.option4}
+                checked={userInput[question.question]?.[1] === question.option4}
                 onChange={(e) =>
                   setUserInput({
                     ...userInput,
-                    [question.question]: e.target.value,
+                    [question.question]: [4, e.target.value],
                   })
                 }
               />
               {question.option4}
+            </label>
+          </div>
+
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value={question.option5}
+                checked={userInput[question.question]?.[1] === question.option5}
+                onChange={(e) =>
+                  setUserInput({
+                    ...userInput,
+                    [question.question]: [5, e.target.value],
+                  })
+                }
+              />
+              {question.option5}
+            </label>
+          </div>
+
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value={question.option6}
+                checked={userInput[question.question]?.[1] === question.option6}
+                onChange={(e) =>
+                  setUserInput({
+                    ...userInput,
+                    [question.question]: [6, e.target.value],
+                  })
+                }
+              />
+              {question.option6}
+            </label>
+          </div>
+
+          <div className="radio">
+            <label>
+              <input
+                type="radio"
+                value={question.option7}
+                checked={userInput[question.question]?.[1] === question.option7}
+                onChange={(e) =>
+                  setUserInput({
+                    ...userInput,
+                    [question.question]: [7, e.target.value],
+                  })
+                }
+              />
+              {question.option7}
             </label>
           </div>
         </div>

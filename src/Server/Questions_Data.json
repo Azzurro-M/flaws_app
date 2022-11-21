@@ -3,46 +3,61 @@
     {
       "title": "Questions 1",
       "question": "How are you feeling today?",
-      "option1": "I am feeling good",
-      "option2": "Not so much",
-      "option3": "Not at all",
-      "option4": "Don't know"
+      "option1": "1 - Extremely unlikely",
+      "option2": "2",
+      "option3": "3",
+      "option4": "4",
+      "option5": "5",
+      "option6": "6",
+      "option7": "7 - Extremely Likely"
     },
 
     {
       "title": "Questions 2",
       "question": "Do you feel you receive enough support from your community?",
-      "option1": "Yes I do",
-      "option2": "Not so much",
-      "option3": "Not at all",
-      "option4": "Don't know"
+      "option1": "1 - Extremely unlikely",
+      "option2": "2",
+      "option3": "3",
+      "option4": "4",
+      "option5": "5",
+      "option6": "6",
+      "option7": "7 - Extremely Likely"
     },
 
     {
       "title": "Questions 3",
-      "question": "How do you feel about your partner?",
-      "option1": "I feel Great",
-      "option2": "Not too good",
-      "option3": "Not good at all",
-      "option4": "Don't know"
+      "question": "Are you experiencing loneliness?",
+      "option1": "1 - Extremely unlikely",
+      "option2": "2",
+      "option3": "3",
+      "option4": "4",
+      "option5": "5",
+      "option6": "6",
+      "option7": "7 - Extremely Likely"
     },
 
     {
       "title": "Questions 4",
       "question": "Has someone close to you been violent towards you today?",
-      "option1": "Yes",
-      "option2": "Not so much",
-      "option3": "Not at all",
-      "option4": "Don't know"
+      "option1": "1 - Extremely unlikely",
+      "option2": "2",
+      "option3": "3",
+      "option4": "4",
+      "option5": "5",
+      "option6": "6",
+      "option7": "7 - Extremely Likely"
     },
 
     {
       "title": "Questions 5",
       "question": "Do you feel safe at home?",
-      "option1": "Yes",
-      "option2": "Not so much",
-      "option3": "Not at all",
-      "option4": "Don't know"
+      "option1": "1 - Extremely unlikely",
+      "option2": "2",
+      "option3": "3",
+      "option4": "4",
+      "option5": "5",
+      "option6": "6",
+      "option7": "7 - Extremely Likely"
     }
   ]
 }
