@@ -1,6 +1,7 @@
 import { useAuth } from "../context/auth.Context";
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { processFirebaseErrors } from "../util/errors";
 
 const Register = () => {
 
@@ -18,26 +19,30 @@ const Register = () => {
         try {
           setLoading(true);
           await register({registerEmail, registerPassword});
+          console.log("2 mail", registerEmail, "2 password", registerPassword);
           setLoading(false);
           navigate("/");
         } catch (err) {
           setLoading(false);
           console.log(err);
-          setError(err.message);
+          setError(processFirebaseErrors(err.message));
         }
     };
 
 if (loading) return <div>Loading...</div>;
 
-if (error) return <div>{error}</div>;
-
 return (
+  <>
     <form onSubmit={onSubmit}>
         <h3> Register User </h3>
-        <input  placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value);}}  />
-        <input  placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value);}}  />
-        {/* <button type = "submit" onClick={register}>Creat User</button> */}
+        {error&&<p>{error}</p>}
+        <input  type= "email" placeholder="Email..."  value = {registerEmail} onChange= {(event) => {setRegisterEmail(event.target.value);}}  />
+        <input  type = "password" placeholder="Password..." value= {registerPassword}  onChange= {(event) => {setRegisterPassword(event.target.value);}}  />
+        <button type = "submit" onClick={register}>Creat User</button> 
+        <p>Already have an account? - <Link to="/login">Log In</Link></p>
     </form> 
+    
+  </> 
   );
 };
 
