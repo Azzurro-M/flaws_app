@@ -30,6 +30,6 @@ body {
     background-color: #d67f8a;
 
 }
-li.active {
+.active {
     background-color: #c97e88;
 }
