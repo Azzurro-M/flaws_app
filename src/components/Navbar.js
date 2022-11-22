@@ -1,12 +1,13 @@
 import React from "react";
 import "./Navbar.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { useAuth } from "../context/auth.Context";
 
 export default function Navbar() {
+  const {user, logout} = useAuth();
   return (
     <nav className="navbar">
-      <button onClick={logout}> Sign Out </button>
-      <img className="logo" src="" alt="" />
+      <button onClick={logout}> Sign Out </button>      
       <ul className="nav-list">
         <CustomLink to="/calender"> Calender</CustomLink>
         <CustomLink to="/form"> Form</CustomLink>
