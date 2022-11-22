@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "./firebase.js";
 import Navbar from './components/Navbar';
-import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   const {user, logout} = useAuth();
@@ -15,11 +15,7 @@ function App() {
      <div className='App'>
        <Navbar />
       <div className="container">
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/form' element={<Form />} />
-          <Route path='/calender' element={<Calender/>}/>
-        </Routes>
+
       </div>
      <h2>Hello {user.email}</h2>
      <button onClick={logout}> Sign Out </button> 
@@ -35,3 +31,8 @@ function App() {
 export default App;
 
 
+//<Routes>
+//<Route path='/' element={<Login />} />
+//<Route path='/form' element={<Form />} />
+//<Route path='/calender' element={<Calender/>}/>
+//</Routes>
