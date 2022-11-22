@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Form from "./pages/Form";
+import Calender from "./pages/Calender";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +42,11 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    
       <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>
-    </BrowserRouter>
+    
   </React.StrictMode>
 );
 

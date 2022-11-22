@@ -1,3 +1,9 @@
-export default function Form() {
-    return <h1>Form</h1>
+import React from "react";
+
+const Form = () => {
+     return (
+         <h1>Form</h1>
+     )
 }
+
+export default Form;

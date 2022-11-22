@@ -8,8 +8,8 @@ export default function Navbar() {
       <button onClick={logout}> Sign Out </button>
       <img className="logo" src="" alt="" />
       <ul className="nav-list">
-        <CustomLink to="/Calender"> Calender</CustomLink>
-        <CustomLink to="/Form"> Form</CustomLink>
+        <CustomLink to="/calender"> Calender</CustomLink>
+        <CustomLink to="/form"> Form</CustomLink>
       </ul>
     </nav>
   );
