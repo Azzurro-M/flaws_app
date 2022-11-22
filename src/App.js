@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "./firebase.js";
 import Navbar from './components/Navbar';
+import { useAuth } from './context/auth.Context';
 
 
 function App() {
