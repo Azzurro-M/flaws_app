@@ -13,10 +13,7 @@ function App() {
   if (user)
    return (
      <div className='App'>
-       <Navbar />
-      <div className="container">
-
-      </div>
+       <Navbar />      
      <h2>Hello {user.email}</h2>
      <button onClick={logout}> Sign Out </button> 
     </div>
