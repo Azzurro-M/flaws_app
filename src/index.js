@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-// import reportWebVitals from './reportWebVitals';
+
 import AuthProvider from "./context/auth.Context";
 import {
   createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
+  RouterProvider  
 } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Form from "./pages/Form";
+import Calender from "./pages/Calender";
 
 const router = createBrowserRouter([
   {
@@ -25,16 +26,24 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path:'/form',
+    element: <Form />,
+  },
+  {
+    path: '/calender',
+    element: < Calender />,
+  },
+
 ]);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </BrowserRouter>
+  <React.StrictMode>   
+    <AuthProvider>        
+        <RouterProvider router={router} />        
+      </AuthProvider>    
   </React.StrictMode>
 );
 
