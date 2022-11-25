@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './App.css';
-import {useState, useEffect} from "react";
-import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
-import { auth } from "./firebase.js";
+// import {useState, useEffect} from "react";
+// import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
+// import { auth } from "./firebase.js";
 import Navbar from './components/Navbar';
 import { useAuth } from './context/auth.Context';
 
