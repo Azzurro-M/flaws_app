@@ -4,8 +4,9 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useAuth } from "../context/auth.Context";
 
 export default function Navbar() {
-  const {logout} = useAuth();
+  const {user, logout} = useAuth();
   
+  if(user)
   return (
     <nav className="navbar">
       <button onClick={logout}> Sign Out </button>      
