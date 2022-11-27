@@ -1,12 +1,14 @@
 import React from "react";
 import "./Navbar.css";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { useNavigate, Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useAuth } from "../context/auth.Context";
 
 export default function Navbar() {
-  const {logout} = useAuth();
-  
-  return (
+  const {user, logout} = useAuth();
+   const navigate = useNavigate();
+
+  if(user)
+   return (
     <nav className="navbar">
       <button onClick={logout}> Sign Out </button>      
       <ul className="nav-list">
@@ -14,7 +16,12 @@ export default function Navbar() {
         <CustomLink to="/form"> Form</CustomLink>
       </ul>
     </nav>
-  );
+   );
+   return <div className='App'>
+    <h2>Flaws - Home Page</h2>
+      <button onClick={() => navigate("/register")}>Register</button>
+      <button onClick={() => navigate("/login")}>Sign In</button> 
+  </div>;
 }
 
 function CustomLink ({ to, children, ...props }) {
