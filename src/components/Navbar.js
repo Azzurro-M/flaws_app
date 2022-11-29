@@ -1,11 +1,10 @@
 import React from "react";
 import "./Navbar.css";
-import { useNavigate, Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useAuth } from "../context/auth.Context";
 
 export default function Navbar() {
-  const {user, logout} = useAuth();
-   const navigate = useNavigate();
+  const {user, logout} = useAuth();  
 
   if(user)
    return (
