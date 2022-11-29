@@ -25,9 +25,3 @@ function App() {
 
 export default App;
 
-
-//<Routes>
-//<Route path='/' element={<Login />} />
-//<Route path='/form' element={<Form />} />
-//<Route path='/calender' element={<Calender/>}/>
-//</Routes>
