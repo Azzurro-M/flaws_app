@@ -2,11 +2,14 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 import "./Form.css";
+import { useAuth } from "../context/auth.Context";
+import App from "../App";
 
 
 function Form() {
   const [questions, setQuestions] = useState([]);
   const [userInput, setUserInput] = useState({});
+  const {user, logout} = useAuth();
 
   const url = "http://localhost:8000/questions";
 
@@ -43,8 +46,8 @@ function Form() {
 
   //check user input -
   // console.log(questions.length && questions[0].option1);
-
-  return (
+  if(user)
+  {return (
     <>
      <Navbar />
     <form onSubmit={onSubmit}>
@@ -186,6 +189,12 @@ function Form() {
     </form>
    </> 
   );
+  } return (
+    <>
+      <App />
+      </>
+  )
+  
 }
 
 // store all user answers
