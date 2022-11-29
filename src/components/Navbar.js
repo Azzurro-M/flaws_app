@@ -16,12 +16,7 @@ export default function Navbar() {
         <CustomLink to="/form"> Form</CustomLink>
       </ul>
     </nav>
-   );
-   return <div className='App'>
-    <h2>Flaws - Home Page</h2>
-      <button onClick={() => navigate("/register")}>Register</button>
-      <button onClick={() => navigate("/login")}>Sign In</button> 
-  </div>;
+   );   
 }
 
 function CustomLink ({ to, children, ...props }) {
