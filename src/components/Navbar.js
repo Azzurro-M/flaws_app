@@ -1,11 +1,10 @@
 import React from "react";
 import "./Navbar.css";
-import { useNavigate, Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useAuth } from "../context/auth.Context";
 
 export default function Navbar() {
-  const {user, logout} = useAuth();
-   const navigate = useNavigate();
+  const {user, logout} = useAuth();  
 
   if(user)
    return (
@@ -16,12 +15,7 @@ export default function Navbar() {
         <CustomLink to="/form"> Form</CustomLink>
       </ul>
     </nav>
-   );
-   return <div className='App'>
-    <h2>Flaws - Home Page</h2>
-      <button onClick={() => navigate("/register")}>Register</button>
-      <button onClick={() => navigate("/login")}>Sign In</button> 
-  </div>;
+   );   
 }
 
 function CustomLink ({ to, children, ...props }) {
