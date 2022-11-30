@@ -188,17 +188,13 @@ function Form() {
     </form>
    </> 
   );
-  } return (
-    <>
-      <App />
-      </>
-  )
-  
+  } 
 }
 
 // store all user answers
 //create a conditional depending on the answers provided
 //return a calendar
+//
 
 export default Form;
 

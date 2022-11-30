@@ -1,5 +1,7 @@
 import {  createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "../firebase";
+
 
 const AuthContext = createContext();
 
@@ -28,8 +30,12 @@ const register = async ( {registerEmail, registerPassword}) => {
     await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
      console.log("mail", loginEmail, "password", loginPassword);
    };
+
+  const navigate = useNavigate();
+
   const logout = async () => {
     await signOut(auth);
+    navigate('/');
   };
 
     const exports = {
